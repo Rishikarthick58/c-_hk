@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n <= 1) return false;
+    int i = 2;
+    while (i * i <= n) {
+        if (n % i == 0) return false;
+        i++;
+    }
+    return true;
+}
+
+int main() {
+    int n, product = 1;
+    cin >> n;
+    while (n > 0) {
+        int digit = n % 10;
+        if (digit != 0) {
+            product *= digit;
+        }
+        n = n / 10;
+    }
+    if (isPrime(product)) {
+        cout << "Box opens!";
+    } else {
+        cout << "Box remains closed.";
+    }
+    return 0;
+}
