@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, sum = 0;
+    cin >> n;
+    while (n > 0) {
+        int digit = n % 10;
+        if (digit % 2 == 1) {
+            sum += digit;
+        }
+        n = n / 10;
+    }
+    cout << "Sum of odd digits: " << sum;
+    return 0;
+}
